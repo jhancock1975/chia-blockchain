@@ -3,6 +3,7 @@
 import asyncio
 import cProfile
 import logging
+import os
 import tempfile
 import time
 from contextlib import contextmanager
@@ -12,7 +13,6 @@ from typing import Iterator, List
 import aiosqlite
 import click
 import zstd
-import os
 
 from chia.cmds.init_funcs import chia_init
 from chia.consensus.default_constants import DEFAULT_CONSTANTS
@@ -21,8 +21,8 @@ from chia.protocols import full_node_protocol
 from chia.server.outbound_message import Message, NodeType
 from chia.types.full_block import FullBlock
 from chia.util.config import load_config
-from tools.test_constants import test_constants as TEST_CONSTANTS
 from tests.block_tools import make_unfinished_block
+from tools.test_constants import test_constants as TEST_CONSTANTS
 
 
 class ExitOnError(logging.Handler):
